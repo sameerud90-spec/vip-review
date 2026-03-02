@@ -1,35 +1,131 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>VIP Furniture Patna - Review</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Furniture Patna</title>
+
 <style>
-body{font-family:Arial; text-align:center; background:#000; color:#fff; padding:40px;}
-.button{display:block; margin:15px auto; padding:15px 30px; background:#fff; color:#000; text-decoration:none; border-radius:25px; font-size:18px;}
-</style>
-<script>
-function copyReview(text){
-    navigator.clipboard.writeText(text);
-    alert("Review text copied! ⭐ Paste and submit 😊");
-    window.open("https://search.google.com/local/writereview?placeid=ChIJ_0x39ed59831d29c705_0x9fe9b4d2b0a610a2","_blank");
+body{
+    margin:0;
+    background:black;
+    color:white;
+    font-family:Arial;
+    overflow:hidden;
+    text-align:center;
 }
-</script>
+
+/* Particle Background */
+.particle{
+    position:fixed;
+    width:6px;
+    height:6px;
+    background:gold;
+    border-radius:50%;
+    animation:particleMove 6s linear infinite;
+}
+
+@keyframes particleMove{
+    from{transform:translateY(-100px) rotate(0);}
+    to{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* Main Card */
+.card{
+    position:relative;
+    margin-top:100px;
+    animation:fade 2s ease;
+}
+
+@keyframes fade{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+h1{
+    font-size:40px;
+    background:linear-gradient(90deg,gold,white,gold);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* Buttons */
+.btn{
+    display:block;
+    width:80%;
+    margin:18px auto;
+    padding:18px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    color:black;
+    background:gold;
+    box-shadow:0 0 30px gold;
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 50px gold;
+}
+
+/* Floating Glow Circle */
+.glow{
+    position:fixed;
+    width:250px;
+    height:250px;
+    background:radial-gradient(circle,gold,transparent);
+    filter:blur(60px);
+    top:30%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    opacity:0.4;
+}
+</style>
+
 </head>
+
 <body>
 
-<h2>VIP Furniture Patna</h2>
-<p>Luxury Furniture & Royal Furnishing in Patna</p>
-<p>Thank you for visiting! ❤️</p>
+<div class="glow"></div>
 
-<button class="button" onclick="copyReview('VIP Furniture Patna ki service bahut acchi hai. Quality aur behaviour dono best ⭐⭐⭐⭐⭐')">
-⭐ Excellent Service
-</button>
+<div class="card">
+<h1>VIP Furniture Patna</h1>
+<p>Luxury Furniture & Royal Furnishing</p>
+<p>★★★★★ Premium Service ★★★★★</p>
 
-<button class="button" onclick="copyReview('Best furniture shop in Patna. Quality + price best ⭐⭐⭐⭐⭐')">
-⭐ Best Quality
-</button>
+<a class="btn" href="https://g.page/r/CaIQprDStOmfEAI/review">
+⭐ Give Google Review
+</a>
 
+<a class="btn" href="https://wa.me/918434300822?text=I%20want%20details%20about%20VIP%20Furniture">
+💬 WhatsApp Chat
+</a>
 
+<a class="btn" href="tel:+918434300822">
+📞 Call Now
+</a>
+
+</div>
+
+<script>
+
+/* Create Particles */
+for(let i=0;i<50;i++){
+    let p=document.createElement("div");
+    p.className="particle";
+    p.style.left=Math.random()*100+"vw";
+    p.style.animationDelay=Math.random()*5+"s";
+    document.body.appendChild(p);
+}
+
+/* Auto Review Suggest Popup */
+setTimeout(()=>{
+    if(confirm("🔥 VIP Furniture Patna wants your 5 ⭐ Review ❤️")){
+        window.location.href="https://g.page/r/CaIQprDStOmfEAI/review";
+    }
+},5000);
+
+</script>
 
 </body>
 </html>
