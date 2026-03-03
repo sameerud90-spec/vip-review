@@ -1,82 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>VIP Furniture Patna Review</title>
+<title>VIP Furniture Patna - Premium Review</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
   margin:0;
-  font-family:Arial;
+  font-family:Arial, sans-serif;
   text-align:center;
-  background:linear-gradient(135deg,#000000,#7a0000,#000000);
+  background:linear-gradient(135deg,#2b0000,#a00000);
   color:white;
-  overflow:hidden;
-}
-
-/* Golden Animation Background */
-.gold-bg{
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:radial-gradient(circle at center, rgba(255,215,0,0.15), transparent 70%);
-  animation: glow 3s infinite alternate;
-}
-@keyframes glow{
-  from{transform:scale(1);}
-  to{transform:scale(1.1);}
-}
-
-.box{
-  position:relative;
-  margin-top:80px;
-  padding:20px;
 }
 
 h1{
-  font-size:28px;
+  margin-top:40px;
+  font-size:32px;
   color:gold;
-  text-shadow:0 0 15px gold;
-  animation: shine 2s infinite alternate;
+  text-shadow:0 0 20px gold;
+  animation:glow 2s infinite alternate;
 }
 
-@keyframes shine{
-  from{text-shadow:0 0 10px gold;}
-  to{text-shadow:0 0 25px gold;}
+@keyframes glow{
+  from{ text-shadow:0 0 10px gold;}
+  to{ text-shadow:0 0 30px #ffd700;}
 }
 
-textarea{
-  width:90%;
-  height:140px;
-  border-radius:12px;
-  padding:15px;
-  font-size:16px;
-  border:2px solid gold;
+.box{
   background:#111;
-  color:white;
-  box-shadow:0 0 10px gold;
+  margin:30px 20px;
+  padding:20px;
+  border-radius:15px;
+  border:3px solid gold;
+  box-shadow:0 0 30px gold;
+  font-size:18px;
+  line-height:1.6;
+  height:220px;
+  overflow:auto;
 }
 
 button{
-  padding:15px 25px;
   margin-top:20px;
+  padding:15px 25px;
   font-size:18px;
   border:none;
   border-radius:10px;
-  cursor:pointer;
-  background:gold;
+  background:linear-gradient(45deg,gold,#ffcc00);
   color:black;
   font-weight:bold;
-  box-shadow:0 0 15px gold;
+  cursor:pointer;
+  box-shadow:0 0 20px gold;
   transition:0.3s;
 }
 
 button:hover{
   transform:scale(1.05);
-  box-shadow:0 0 25px gold;
+  box-shadow:0 0 40px gold;
 }
 
-.footer{
+.small{
   margin-top:20px;
   font-size:14px;
   opacity:0.8;
@@ -86,34 +68,31 @@ button:hover{
 
 <body>
 
-<div class="gold-bg"></div>
+<h1>👑 VIP Furniture Patna 👑</h1>
 
-<div class="box">
-  <h1>👑 VIP Furniture Patna 👑</h1>
-  <h2>अपना रिव्यू कॉपी करें और 5⭐ दें</h2>
+<h2>अपना रिव्यू कॉपी करें और 5 ⭐ दें</h2>
 
-  <textarea id="reviewText">
-मैंने VIP Furniture Patna से फर्नीचर खरीदा और मेरा अनुभव बहुत ही शानदार रहा। यहाँ का लक्ज़री और रॉयल कलेक्शन बेहद खूबसूरत है। क्वालिटी बेहतरीन है और सर्विस भी समय पर मिली। पटना में फर्नीचर और होम डेकोर के लिए यह सबसे अच्छा शोरूम है। मैं सभी को यहाँ से खरीदारी करने की सलाह देता हूँ।
-  </textarea>
-  <br>
+<div class="box" id="reviewText">
+मैंने VIP Furniture Patna से फर्नीचर खरीदा और मेरा अनुभव बहुत ही शानदार रहा। यहाँ का लग्जरी और रॉयल कलेक्शन बेहद खूबसूरत है। क्वालिटी बेहतरीन है और सर्विस समय पर मिली। पटना में फर्नीचर और होम डेकोर के लिए यह सबसे अच्छा शोरूम है। मैं सभी को यहाँ से खरीदारी करने की सलाह देता हूँ।
+</div>
 
-  <button onclick="copyReview()">⭐ रिव्यू कॉपी करें और 5 स्टार दें ⭐</button>
+<button onclick="copyReview()">⭐ रिव्यू कॉपी करें और 5 स्टार दें ⭐</button>
 
-  <div class="footer">
-    धन्यवाद! आपका समर्थन हमें और बेहतर बनने की प्रेरणा देता है।
-  </div>
+<div class="small">
+धन्यवाद! आपका समर्थन हमें और बेहतर बनने की प्रेरणा देता है।
 </div>
 
 <script>
-function copyReview() {
-  var copyText = document.getElementById("reviewText");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(copyText.value);
+function copyReview(){
+  var text = document.getElementById("reviewText").innerText;
 
-  alert("रिव्यू कॉपी हो गया! अब आप Google रिव्यू पेज पर जा रहे हैं।");
-
-  window.location.href="https://search.google.com/local/writereview?placeid=ChIJ_BnZ6x2J7TkRoqYKsNQ06Z8";
+  navigator.clipboard.writeText(text).then(function(){
+      alert("रिव्यू कॉपी हो गया! अब 5 स्टार दे दें 🙏");
+      window.location.href="https://www.google.com/search?client=ms-unknown&hs=IqmU&sca_esv=ff24eace6b27a26e&sxsrf=ANbL-n5vEhp3mIK-zFJXBcB2xYu9NKHu_A:1772547523506&q=vip+furniture+patna+reviews&uds=ALYpb_lT5YbwbBs_zcjA4hvNmebR4qx2S0fEOpv05cq_NGBBCfc3LcC4i69mGAFXif9EpyaS-vXOEljCMqiBmrp3B5oUy5mn4KmJ2qA7hqqThdMg0Z_DvB8X94cDqe3XFbyBSRZqazc03twXymnHSlYkHpvtsj28EkY2d8eKpEfZY__6xVn8c7Ks2XsnoDW1DOKBYtsS-xmhRVXVKXgt87wnoXmNZkZ2l6Pgl21vecfvVpttrGVKgaPaqyfzUYhJheCkxaSJTbTZKRBbHd4AflD-KDzkXbmy3nib_jLi2sI4-mGBN2HUh-MzY_cgimHxhR4dUqabBDH7iSeRnvgpLiBYZbXlYNPz64DvkFC6LHrPPYNctyt9eDQTtw0ALxZ9cI5COwGDSyUIX_w9hjLOwVttI0M7CH5d-N5vLsnGDhlCoQO1bEXmOItr2S1l-S3h9xlw-_D7WkLmCECspuKIqZfeANIBk4OW1Q&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOZt53ecqbTxyeuWQMAxyW0bZgTKm9ed33TCPhslNh2xpCUs9y6LWc0qzduiQET4BYPDR8KJL0g0I5UIR9u0KhLEKTbkp7FpHeAuxen1JKQcR6NAmow%3D%3D&sa=X&ved=2ahUKEwj3vvGL9oOTAxXPZyoJHflVAB8Qk8gLegQIGhAB&ictx=1&biw=411&bih=751&dpr=2.63";
+  }).catch(function(){
+      alert("अगर कॉपी नहीं हुआ तो WhatsApp पर संपर्क करें");
+      window.location.href="https://wa.me/918434300822";
+  });
 }
 </script>
 
