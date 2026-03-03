@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>VIP Furniture Patna - Premium Review</title>
+<title>VIP Furniture Patna Review</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
   margin:0;
-  font-family:Arial, sans-serif;
+  font-family:Arial;
   text-align:center;
   background:linear-gradient(135deg,#2b0000,#a00000);
   color:white;
@@ -15,15 +15,8 @@ body{
 
 h1{
   margin-top:40px;
-  font-size:32px;
   color:gold;
   text-shadow:0 0 20px gold;
-  animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-  from{ text-shadow:0 0 10px gold;}
-  to{ text-shadow:0 0 30px #ffd700;}
 }
 
 .box{
@@ -32,11 +25,11 @@ h1{
   padding:20px;
   border-radius:15px;
   border:3px solid gold;
-  box-shadow:0 0 30px gold;
-  font-size:18px;
-  line-height:1.6;
-  height:220px;
-  overflow:auto;
+  box-shadow:0 0 25px gold;
+  font-size:17px;
+  line-height:1.7;
+  min-height:200px;
+  white-space:pre-line;
 }
 
 button{
@@ -45,23 +38,10 @@ button{
   font-size:18px;
   border:none;
   border-radius:10px;
-  background:linear-gradient(45deg,gold,#ffcc00);
+  background:gold;
   color:black;
   font-weight:bold;
   cursor:pointer;
-  box-shadow:0 0 20px gold;
-  transition:0.3s;
-}
-
-button:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 40px gold;
-}
-
-.small{
-  margin-top:20px;
-  font-size:14px;
-  opacity:0.8;
 }
 </style>
 </head>
@@ -69,31 +49,71 @@ button:hover{
 <body>
 
 <h1>👑 VIP Furniture Patna 👑</h1>
+<h2>Copy Review & Give 5 ⭐</h2>
 
-<h2>अपना रिव्यू कॉपी करें और 5 ⭐ दें</h2>
+<div class="box" id="reviewText"></div>
 
-<div class="box" id="reviewText">
-मैंने VIP Furniture Patna से फर्नीचर खरीदा और मेरा अनुभव बहुत ही शानदार रहा। यहाँ का लग्जरी और रॉयल कलेक्शन बेहद खूबसूरत है। क्वालिटी बेहतरीन है और सर्विस समय पर मिली। पटना में फर्नीचर और होम डेकोर के लिए यह सबसे अच्छा शोरूम है। मैं सभी को यहाँ से खरीदारी करने की सलाह देता हूँ।
-</div>
-
-<button onclick="copyReview()">⭐ रिव्यू कॉपी करें और 5 स्टार दें ⭐</button>
-
-<div class="small">
-धन्यवाद! आपका समर्थन हमें और बेहतर बनने की प्रेरणा देता है।
-</div>
+<button onclick="copyReview()">⭐ Copy Review & Open Review Page ⭐</button>
 
 <script>
+
+var startLines = [
+"Patna me furniture near me search karte waqt mujhe VIP Furniture Patna mila.",
+"Main home decor ke liye VIP Furniture Patna gaya.",
+"Luxury furniture lene ke liye maine VIP Furniture Patna visit kiya.",
+"Furniture shop in Patna search karne par mujhe yeh showroom mila.",
+"Royal aur fancy furniture ke liye main yaha aaya."
+];
+
+var middleLines = [
+"Yaha ka collection dekh kar main sach me impress ho gaya.",
+"Design aur finishing dono bahut premium lage.",
+"Quality expected se bhi better nikli.",
+"Har product ka look bahut classy aur modern hai.",
+"Furniture strong aur durable material ka bana hua hai."
+];
+
+var serviceLines = [
+"Staff ka behavior bahut polite aur helpful tha.",
+"Delivery time par mil gayi aur fitting bhi smooth thi.",
+"Team ne proper guidance diya kaunsa design best rahega.",
+"Customer service professional aur friendly hai.",
+"Service experience overall bahut achcha raha."
+];
+
+var endingLines = [
+"Main sabko yaha se shopping karne ki salah dunga.",
+"Definitely 5 star dene layak showroom hai.",
+"Patna me best furniture shop yahi hai.",
+"Agar aap luxury chahte hain to ek baar jarur visit karein.",
+"Mera experience bahut hi satisfying raha."
+];
+
+function random(arr){
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function generateReview(){
+  var review = "⭐⭐⭐⭐⭐\n\n" +
+               random(startLines) + " " +
+               random(middleLines) + " " +
+               random(serviceLines) + " " +
+               random(endingLines);
+
+  document.getElementById("reviewText").innerText = review;
+}
+
+generateReview();
+
 function copyReview(){
   var text = document.getElementById("reviewText").innerText;
-
-  navigator.clipboard.writeText(text).then(function(){
-      alert("रिव्यू कॉपी हो गया! अब 5 स्टार दे दें 🙏");
-      window.location.href="https://www.google.com/search?client=ms-unknown&hs=IqmU&sca_esv=ff24eace6b27a26e&sxsrf=ANbL-n5vEhp3mIK-zFJXBcB2xYu9NKHu_A:1772547523506&q=vip+furniture+patna+reviews&uds=ALYpb_lT5YbwbBs_zcjA4hvNmebR4qx2S0fEOpv05cq_NGBBCfc3LcC4i69mGAFXif9EpyaS-vXOEljCMqiBmrp3B5oUy5mn4KmJ2qA7hqqThdMg0Z_DvB8X94cDqe3XFbyBSRZqazc03twXymnHSlYkHpvtsj28EkY2d8eKpEfZY__6xVn8c7Ks2XsnoDW1DOKBYtsS-xmhRVXVKXgt87wnoXmNZkZ2l6Pgl21vecfvVpttrGVKgaPaqyfzUYhJheCkxaSJTbTZKRBbHd4AflD-KDzkXbmy3nib_jLi2sI4-mGBN2HUh-MzY_cgimHxhR4dUqabBDH7iSeRnvgpLiBYZbXlYNPz64DvkFC6LHrPPYNctyt9eDQTtw0ALxZ9cI5COwGDSyUIX_w9hjLOwVttI0M7CH5d-N5vLsnGDhlCoQO1bEXmOItr2S1l-S3h9xlw-_D7WkLmCECspuKIqZfeANIBk4OW1Q&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOZt53ecqbTxyeuWQMAxyW0bZgTKm9ed33TCPhslNh2xpCUs9y6LWc0qzduiQET4BYPDR8KJL0g0I5UIR9u0KhLEKTbkp7FpHeAuxen1JKQcR6NAmow%3D%3D&sa=X&ved=2ahUKEwj3vvGL9oOTAxXPZyoJHflVAB8Qk8gLegQIGhAB&ictx=1&biw=411&bih=751&dpr=2.63";
-  }).catch(function(){
-      alert("अगर कॉपी नहीं हुआ तो WhatsApp पर संपर्क करें");
-      window.location.href="https://wa.me/918434300822";
-  });
+  navigator.clipboard.writeText(text);
+  alert("Review Copied! Ab 5 Star de dijiye ⭐");
+  
+  // YOUR GOOGLE SEARCH REVIEW LINK ADDED
+  window.location.href="https://www.google.com/search?client=ms-unknown&hs=NBSp&sca_esv=ff24eace6b27a26e&sxsrf=ANbL-n5VmFaS-O5AReJAHgQC43xsy-y07g:1772549127384&q=vip+furniture+patna+reviews&uds=ALYpb_lT5YbwbBs_zcjA4hvNmebR4qx2S0fEOpv05cq_NGBBCfc3LcC4i69mGAFXif9EpyaS-vXOEljCMqiBmrp3B5oUy5mn4KmJ2qA7hqqThdMg0Z_DvB8X94cDqe3XFbyBSRZqazc03twXymnHSlYkHpvtsj28EkY2d8eKpEfZY__6xVn8c7Ks2XsnoDW1DOKBYtsS-xmhRVXVKXgt87wnoXmNZkZ2l6Pgl21vecfvVpttrGVKgaPaqyfzUYhJheCkxaSJTbTZKRBbHd4AflD-KDzkXbmy3nib_jLi2sI4-mGBN2HUh-MzY_cgimHxhR4dUqabBDH7iSeRnvgpLiBYZbXlYNPz64DvkFC6LHrPPYNctyt9eDQTtw0ALxZ9cI5COwGDSyUIX_w9hjLOwVttI0M7CH5d-N5vLsnGDhlCoQO1bEXmOItr2S1l-S3h9xlw-_D7WkLmCECspuKIqZfeANIBk4OW1Q&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOZt53ecqbTxyeuWQMAxyW0bZgTKm9ed33TCPhslNh2xpCUs9y6LWc0qzduiQET4BYPDR8KJL0g0I5UIR9u0KhLEKTbkp7FpHeAuxen1JKQcR6NAmow%3D%3D";
 }
+
 </script>
 
 </body>
