@@ -1,39 +1,64 @@
-<script>
+<!DOCTYPE html>
+<html>
+<head>
+<title>VIP Furniture Patna Review</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  text-align:center;
+  background:linear-gradient(135deg,#000000,#8b0000);
+  color:white;
+}
+.box{
+  margin-top:100px;
+}
+button{
+  padding:15px 25px;
+  margin:10px;
+  font-size:18px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+.five{
+  background:gold;
+  color:black;
+}
+.other{
+  background:white;
+  color:black;
+}
+img{
+  width:120px;
+  margin-top:20px;
+}
+</style>
+</head>
 
-/* Particles */
-for(let i=0;i<50;i++){
-    let p=document.createElement("div");
-    p.style.position="fixed";
-    p.style.width="6px";
-    p.style.height="6px";
-    p.style.background="gold";
-    p.style.borderRadius="50%";
-    p.style.left=Math.random()*100+"vw";
-    p.style.animation="particleMove 6s linear infinite";
-    p.style.animationDelay=Math.random()*5+"s";
-    document.body.appendChild(p);
+<body>
+
+<div class="box">
+  <h1>VIP Furniture Patna</h1>
+  <img src="https://cdn-icons-png.flaticon.com/512/1040/1040230.png">
+  <h2>How was your experience?</h2>
+
+  <button class="five" onclick="fiveStar()">⭐⭐⭐⭐⭐ Excellent</button>
+  <br>
+  <button class="other" onclick="otherStar()">Need Improvement</button>
+</div>
+
+<script>
+function fiveStar(){
+  window.location.href="https://g.page/r/CaIQprDsTOmFEAI/review";
 }
 
-/* Review Prompts Array */
-let prompts=[
-"❤️ VIP Furniture Patna gives best quality furniture and excellent service. Please give 5 ⭐ review.",
-"🔥 Your feedback helps us improve our premium furniture service. Kindly rate your experience.",
-"⭐ Were you satisfied with our furniture quality and delivery service? Please leave a review.",
-"💎 VIP Furniture Patna values your opinion. Please support us with a 5 star rating.",
-"🏆 We always try to provide royal quality furniture. Please share your experience.",
-"😊 Did you like our customer service and product quality? Please give us 5 stars.",
-"🚀 Help us grow by giving your valuable review about VIP Furniture Patna.",
-"💖 Your review helps other customers choose the best furniture.",
-"🎯 We aim for 100% customer satisfaction. Please rate your experience.",
-"👑 Thank you for visiting VIP Furniture Patna. Please leave your feedback."
-];
-
-/* Random Review Popup */
-setTimeout(()=>{
-    let msg=prompts[Math.floor(Math.random()*prompts.length)];
-    if(confirm(msg)){
-        window.location.href="https://g.page/r/CaIQprDStOmfEAI/review";
-    }
-},4000);
-
+function otherStar(){
+  alert("Please contact us on WhatsApp for support.");
+  window.location.href="https://wa.me/918434300822";
+}
 </script>
+
+</body>
+</html>
